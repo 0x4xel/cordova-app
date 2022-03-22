@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<title>Registro</title>
+
+
+	<style type="text/css">
+		.logo {
+			text-align: center;
+		}
+
+		.logo img {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 15px;
+		}
+
+		.slider-registro {
+			display: none;
+		}
+
+
+		.errorValidacion {
+			animation: shake 0.2s ease-in-out 0s 2;
+			box-shadow: 0 0 0.5em red;
+		}
+	</style>
+
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script data-main="js/inicio" type="text/javascript" src="lib/requirejs/require.js"></script>
+
+
+	<!-- Localization -->
+	<!-- <script src="scripts/CLDRPluralRuleParser.js"></script> -->
+	<script src="scripts/jquery.i18n.js"></script>
+	<script src="scripts/jquery.i18n.messagestore.js"></script>
+	<script src="scripts/jquery.i18n.fallbacks.js"></script>
+	<script src="scripts/jquery.i18n.language.js"></script>
+	<script src="scripts/jquery.i18n.parser.js"></script>
+	<script src="scripts/jquery.i18n.emitter.js"></script>
+	<script src="scripts/jquery.i18n.emitter.bidi.js"></script>
+</head>
+
+<body>
+	<div id="page-transitions">
+
+		<div class="page-preloader page-preloader-light">
+			<img class="page-preload" src="images/preload.gif">
+		</div>
+
+
+
+		<div id="page-content" class="page-content">
+			<div id="page-content-scroll" style="padding-top: 50px;">
+				<div class="content">
+
+					<div id="slider_BTCaldera" class="page-login full-bottom slider-registro">
+						<h5 data-i18n="titleConectarBluetoothCaldera">Conectar bluetooth de la caldera.</h5>
+						<div class="logo">
+							<img src="img/registro/encender_bluetooth_caldera.gif" width="250px">
+						</div>
+						<p data-i18n="descConectarBluetoothCaldera">Conectar bluetooth de la caldera </p>
+						<div class="clear"></div>
+						<div style="display: flex;">
+							<a href="javascript:General.cerrarSesion()" target="_self"
+								class="login-button button button-small button-white button-fullscreen full-bottom">
+								<span data-i18n="volverLoginBoton">volverLoginBoton</span>
+							</a>
+
+							<a href="javascript:nextScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+								<span data-i18n="siguienteBoton">siguienteBoton</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_BTMovil" class="page-login full-bottom slider-registro">
+						<h5 data-i18n="titleConectarBluetoothTerminal">Conectar bluetooth del terminal.</h5>
+						<div class="logo">
+							<img style="display: none;" id="imgBluetoothAndroid" src="img/registro/encender_bluetooth_telefono.gif" width="250px">
+							<img style="display: none;" id="imgBluetoothIOS" src="img/registro/encender_bluetooth_telefonoIOS.png" width="250px">
+						</div>
+						<p data-i18n="descConectarBluetoothTerminal">Conectar bluetooth del terminal </p>
+						<div class="clear"></div>
+						<div style="display: flex;">
+							<a href="javascript:lastScreen()" target="_self"
+								class="login-button button button-small button-white button-fullscreen full-bottom">
+								<span data-i18n="anteriorBoton">anteriorBoton</span>
+							</a>
+
+							<a href="javascript:nextScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+								<span data-i18n="siguienteBoton">siguienteBoton</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_Permisos" class="page-login full-bottom slider-registro">
+						<h5 data-i18n="titlePermisosBluetooth">Permisos.</h5>
+						<div class="logo">
+							<img src="img/registro/conceder_permisos.png" width="250px">
+						</div>
+						<p id="descPermisosBluetooth">Solicitar conceder permisos</p>
+						<div class="clear"></div>
+						<div style="display: flex;">
+							<a href="javascript:lastScreen()" target="_self"
+								class="login-button button button-small button-white button-fullscreen full-bottom">
+								<span data-i18n="anteriorBoton">anteriorBoton</span>
+							</a>
+
+							<a href="#" class="login-button button button-small button-blue button-fullscreen full-bottom">
+								<span data-i18n="siguienteBoton">siguienteBoton</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_BuscarCaldera" class="page-login full-bottom slider-registro">
+						<h5 data-i18n="titleBuscando">Buscando</h5>
+						<div class="logo">
+							<img src="img/registro/buscando_calderas.gif" width="250px">
+						</div>
+						<p data-i18n="descBuscando">Buscando la caldera</p>
+						<div class="clear"></div>
+						<div style="display: flex;">
+							<a href="javascript:cancelarBusqueda();" target="_self"
+								class="login-button button button-small button-white button-fullscreen full-bottom">
+								<span data-i18n="cancelarBusquedaBoton">cancelarBusquedaBoton</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_BusquedaCalderaCompletada" class="page-login full-bottom slider-registro">
+						<div id="CALDERA_ENCONTRADA" style="display:none;">
+							<h5 data-i18n="titleEncontrado">Se ha encontrado algo</h5>
+							<div class="logo">
+								<img src="img/registro/encontrada_caldera.png" width="250px">
+							</div>
+							<p data-i18n="descEncontrado">Se ha encontrado una caldera</p>
+							<div class="clear"></div>
+							<div style="display: flex;">
+								<a href="javascript:cancelarBusqueda();" target="_self"
+									class="login-button button button-small button-white button-fullscreen full-bottom">
+									<span data-i18n="anteriorBoton">anteriorBoton</span>
+									<!-- Para retroceder realmente cancelas la busqueda -->
+								</a>
+
+								<a href="javascript:nextScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+									<span data-i18n="siguienteBoton">siguienteBoton</span>
+								</a>
+							</div>
+						</div>
+						<div id="CALDERA_NO_ENCONTRADA" style="display:none;">
+							<h5 data-i18n="titleNoEncontrado">No se encontraron calderas.</h5>
+							<div class="logo">
+								<img src="img/registro/no_encontrada_caldera.png" width="250px">
+							</div>
+							<p data-i18n="descNoEncontrado">No hay calderas visibles a la app.</p>
+							<div class="clear"></div>
+							<div style="display: flex;">
+								<a href="javascript:General.cerrarSesion()" target="_self"
+									class="login-button button button-small button-white button-fullscreen full-bottom">
+									<span data-i18n="volverLoginBoton">volverLoginBoton</span>
+								</a>
+
+								<a href="javascript:retryScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+									<span data-i18n="reintentarBoton">reintentarBoton</span>
+								</a>
+							</div>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_IntroducirWifi" class="page-login full-bottom slider-registro">
+						<h5 data-i18n="titleConexionWifi">Registro de la Wifi</h5>
+						<form>
+							<p data-i18n="descConexionWifi">Introduzca los datos de la wifi a la que conectará la
+								caldera
+							</p>
+							<div class="login-input">
+								<i class="fa fa-wifi"></i>
+								<input id="inputWifiSSID" type="text" placeholder="SSID" onfocus="this.placeholder = ''" onblur="this.placeholder = 'SSID'">
+								<i id="iconoSelectSSID" class="fa fa-caret-down" style="
+									top: 0;
+									right: 10px;
+									position: absolute;
+									font-size: 20px;
+									z-index: 0;
+								"></i>
+
+								<select class="selDiv" id="selectSSID" style="
+								    top: 0;
+								    right: 0;
+								    position: absolute;
+								    width: 65px;
+								    height: 65px;
+								    opacity: 0;
+									z-index: 999;
+								">
+								</select>
+
+							</div>
+							<div class="login-input">
+								<i class="fa fa-lock"></i>
+								<input id="inputWifiPass" type="password" placeholder="Password" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Password'">
+								<i class="fa fa-eye iconoMostrarOcultar"></i>
+							</div>
+						</form>
+						<div class="clear"></div>
+						<div style="display: flex;">
+							<a href="javascript:cancelarBusqueda();" target="_self"
+								class="login-button button button-small button-white button-fullscreen full-bottom">
+								<span data-i18n="volverCalderasBoton">volverCalderasBoton</span>
+							</a>
+
+							<a href="javascript:nextScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+								<span data-i18n="siguienteBoton">siguienteBoton</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_ConexionWifi" class="page-login full-bottom slider-registro">
+						<h5 data-i18n="titleConectando">Conectando caldera a la wifi</h5>
+						<div class="logo">
+							<img src="img/registro/buscando_wifi.gif" width="250px">
+						</div>
+						<p data-i18n="descConectando">descConectando</p>
+						<div class="clear"></div>
+						<div style="display: flex;">
+							<a href="javascript:lastScreen();" target="_self"
+								class="login-button button button-small button-white button-fullscreen full-bottom">
+								<span data-i18n="cancelarConexionBoton">cancelarConexionBoton</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div id="slider_ConexionWifiCompletada" class="page-login full-bottom slider-registro">
+						<div id="WIFI_OK" style="display:none;">
+							<h5 data-i18n="titleConexionWifiOk">Registro de la Wifi</h5>
+							<div class="logo">
+								<img src="img/registro/wifi_conectada.png" width="250px">
+							</div>
+							<p data-i18n="descConexionWifiOk">Se ha conectado a la wifi!</p>
+							<div class="clear"></div>
+							<div style="display: flex;">
+								<a href="javascript:lastScreen();" target="_self"
+									class="login-button button button-small button-white button-fullscreen full-bottom">
+									<span data-i18n="cancelarBoton">cancelarBoton</span>
+								</a>
+
+								<a href="javascript:nextScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+									<span data-i18n="siguienteBoton">siguienteBoton</span>
+								</a>
+							</div>
+						</div>
+						<div id="WIFI_NOOK" style="display:none;">
+							<h5 data-i18n="tituloErrorConexionCaldera">Error al conectarse a la wifi</h5>
+							<div class="logo">
+								<img src="img/registro/error_wifi_caldera.gif" width="250px">
+							</div>
+							<p style="display:none;" class="additionalParams" id="error_1" data-i18n="descErrorConexionPass">Error contraseña erronea</p>
+							<p style="display:none;" class="additionalParams" id="error_2" data-i18n="descErrorConexionTipo">Error wifi no encontrada</p>
+							<p style="display:none;" class="additionalParams" id="error_3" data-i18n="descErrorConexionDesconocido">Error desconocido</p>
+							<div class="clear"></div>
+							<div style="display: flex;">
+								<a href="javascript:lastScreen();" target="_self"
+									class="login-button button button-small button-white button-fullscreen full-bottom">
+									<span data-i18n="volverInputWifiBoton">volverInputWifiBoton</span>
+								</a>
+
+								<a href="javascript:retryScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+									<span data-i18n="reintentarBoton">reintentar</span>
+								</a>
+							</div>
+						</div>
+						<div id="ERROR_TIMEOUT_WIFI" style="display:none;">
+							<h5 data-i18n="tituloErrorTimeout"></h5>
+							<div class="logo">
+								<img src="img/registro/error_comunicacion.gif" width="250px">
+							</div>
+							<p data-i18n="descErrorTimeout">.</p>
+							<div class="clear"></div>
+							<div style="display: flex;">
+								<a href="javascript:lastScreen();" target="_self"
+									class="login-button button button-small button-white button-fullscreen full-bottom">
+									<span data-i18n="volverInputWifiBoton">volverInputWifiBoton</span>
+								</a>
+
+								<a href="javascript:retryScreen();" class="login-button button button-small button-blue button-fullscreen full-bottom">
+									<span data-i18n="reintentarBoton">reintentar</span>
+								</a>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,29 @@
+{
+	"compileOnSave": false,
+
+	"compilerOptions": {
+		"target": "es5",
+		"module": "amd",
+		"outDir": "./www/js",
+		"baseUrl": "./",
+		
+		"sourceMap": true,
+		"strict": true,
+		"declaration": true,
+		"inlineSources": true,
+		"noEmitOnError": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+		"preserveSymlinks": true,
+		"moduleResolution": "node",
+		"typeRoots": ["node_modules/@types"],
+		"lib": [
+			"es2017",
+			"dom",
+			"es6"
+		],
+
+
+	}
+}

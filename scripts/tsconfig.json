@@ -1,0 +1,11 @@
+{
+	// extend your base config so you don't have to redefine your compilerOptions
+	"extends": "../tsconfig.base.json",
+	"include": [".", "../plugins"],
+
+	"compilerOptions": {
+		"rootDir": "..",
+		"outDir": "../www/js",
+		"composite": true
+	},
+}
