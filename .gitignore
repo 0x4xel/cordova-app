@@ -1,0 +1,7 @@
+﻿# .gitignore
+.vscode
+node_modules
+plugins
+platforms
+
+www/js
