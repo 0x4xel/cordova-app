@@ -1,0 +1,22 @@
+
+i.fas {
+	margin-right: 15px;
+}
+
+.item-content {
+	font-size: 14px;
+}
+
+.profile-img-grande .avatar{
+	color: #fff;
+    font-size: 70px;
+    height: 110px;
+    line-height: 110px;
+    margin: 0;
+    width: 110px;
+}
+
+.tieneEvento {
+	text-decoration: underline;
+    font-weight: 900;
+}
