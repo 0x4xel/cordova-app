@@ -6,7 +6,7 @@
 	<name>TypeScript_Greeter</name>
 	<description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
 	<author email="dev@cordova.apache.org" href="http://cordova.io">Apache Cordova Team</author>
-	<content src="index.html" />
+	<content src="login.html" />
 	<access origin="*" />
 	<vs:features />
 	<preference name="SplashScreen" value="screen" />
