@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+	<title>Perfil de asignatura</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+
+	<!-- Font-Awesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/css/all.css">
+	<link rel="stylesheet" href="assets/plugins/css/fontawesome.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/propios.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+		<div class="profile">
+
+			<!-- Header -->
+			<div class="navbar two-action no-hairline">
+				<div class="navbar-inner d-flex align-items-center justify-content-between">
+					<div class="left me-0">
+						<a href="asignaturas.html" class="back link d-flex align-items-center">
+							<i class="fa fa-angle-left"></i>
+							<span>Back</span>
+						</a>
+					</div>
+					<div class="sliding custom-title">Asignatura</div>
+					<div class="right me-2">
+						<a href="#" class="link icon-only" data-bs-toggle="modal"
+							data-bs-target="#modalEditarEvaluacion">
+							<i class="far fa-edit"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- /Header -->
+
+			<div class="page-content mt-0">
+
+				<!-- Profile Header -->
+				<div class="profile-header">
+					<div class="pro-img-box">
+						<div class="profile-img-grande">
+							<a class="avatar" href="#" id="txtPrimeraLetraNombreAsignatura"></a>
+						</div>
+
+					</div>
+					<div class="pro-user-det">
+						<div class="profile-name" id="nombreAsignatura"></div>
+						<div class="profile-designation" id="descripcionAsignatura">r</div>
+					</div>
+				</div>
+				<!-- /Profile Header -->
+
+				<ul id="tabs" class="nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a id="General" href="#pane-A" class="nav-link active" data-bs-toggle="tab"
+							role="tab">General</a>
+					</li>
+					<li class="nav-item">
+						<a id="Alumnos" href="#pane-B" class="nav-link" data-bs-toggle="tab" role="tab">Alumnos</a>
+					</li>
+					<li class="nav-item">
+						<a id="Evaluacion" href="#pane-C" class="nav-link" data-bs-toggle="tab"
+							role="tab">Evaluacion</a>
+					</li>
+				</ul>
+
+				<div id="content" class="tab-content" role="tablist">
+
+					<div id="pane-A" class="tab-pane fade show active" role="tabpanel" aria-labelledby="General">
+						<div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+							aria-labelledby="heading-A">
+							<div class="list">
+								<div class="card-box">
+									<ul>
+										<li>
+											<div class="item-content">
+												<div class="item-inner d-flex justify-content-between">
+													<div class="item-title">ID asignatura</div>
+													<div class="item-after text-muted" id="txtValorAsignatura"></div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="item-content">
+												<div class="item-inner d-flex justify-content-between">
+													<div class="item-title">Alumnos inscritos</div>
+													<div class="item-after text-muted" id="txtAlumnosInscritos"></div>
+												</div>
+											</div>
+										</li>
+
+										<li>
+											<div class="item-content">
+												<div class="item-inner d-flex justify-content-between">
+													<div class="item-title">Horas por semana</div>
+													<div class="item-after text-muted" id="txtHorasSemanales"></div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="card-box pt-0 pb-0">
+									<div class="block block-strong address-block">
+										<p><strong>Curso</strong></p>
+										<p id="txtNombreCurso"></p>
+									</div>
+								</div>
+								<div class="card-box">
+									<div class="block skills-block">
+										<p><strong>Grado</strong></p>
+										<p id="txtGrado"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="pane-B" class="tab-pane fade" role="tabpanel" aria-labelledby="Alumnos">
+						<div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel"
+							aria-labelledby="heading-B">
+							<div class="card-box">
+								<div class="experience-box">
+									<ul class="experience-list" id = "divAlumnos">
+										<!-- Por JS -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="pane-C" class="tab-pane fade" role="tabpanel" aria-labelledby="Evaluacion">
+						<div id="collapse-C" class="collapse" role="tabpanel" data-parent="#content"
+							aria-labelledby="heading-C">
+							<div class="card-box">
+								<div class="experience-box">
+									<ul class="experience-list" id = "divEvaluaciones">
+										<!--  Por JS -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- modal Editar Asignatura -->
+				<div class="modal fade custom-modal-popup" id="modalEditarEvaluacion" tabindex="-1" role="dialog"
+					aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title" id="exampleModalLabel">Edit Profile</h6>
+								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="list no-hairlines custom-form mt-0">
+									<h6>Basic Informations</h6>
+									<ul>
+										<li class="item-content item-input mt-3">
+											<div class="item-inner">
+												<div class="item-title item-label">First Name</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Last Name</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Birth Date</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Gender</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<h6>Contact Informations</h6>
+									<ul>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Address</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">State</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Country</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Pincode</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Phone Number</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Address</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<h6>Education Informations</h6>
+									<ul>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Institution</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Subject</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Starting Date</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Complete Date</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Degree</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Grade</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-input-wrap m-t-10">
+													<div class="add-more">
+														<a class="add-more-btn" href="#"><i class="fa fa-plus"></i> Add
+															More Institute</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<h6>Experience Informations</h6>
+									<ul>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Company Name</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Location</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Job Position</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Period From</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-title item-label">Period To</div>
+												<div class="item-input-wrap">
+													<input type="text">
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-input-wrap m-t-10">
+													<div class="add-more">
+														<a class="add-more-btn" href="#"><i class="fa fa-plus"></i> Add
+															More Experience</a>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-input-wrap m-t-10">
+													<div class="row">
+														<div class="col-12">
+															<a class="tab-link button button-big button-purple w-100 btn"
+																href="" data-bs-dismiss="modal"
+																aria-label="Close">Send</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Edit Profile Modal -->
+
+			</div>
+		</div>
+
+	</div>
+	<!-- Main Wrapper /-->
+
+	<div style="display:none">
+
+		<li id = "plantillaAlumno" class = "eventoAlumno">
+			<div class="experience-user">
+				<div class="before-circle"></div>
+			</div>
+			<div class="experience-content">
+				<div class="timeline-content">
+					<span class="name tieneEvento" id = "nombreAlumno"></span>
+				</div>
+			</div>
+		</li>
+
+
+		<li id = "plantillaEvaluacion" data-bs-toggle="modal"
+		data-bs-target="#modalEditarEvaluacion" class = "eventoEvaluacion">
+			<div class="experience-user">
+				<div class="before-circle"></div>
+			</div>
+			<div class="experience-content">
+				<div class="timeline-content">
+					<span class="name tieneEvento" id = "txtnombreExamen"></span>
+					<div id = "txtTipoEvaluacion"></div>
+					<span class="time" id = "txtFechaExamen"></span>
+				</div>
+			</div>
+		</li>
+
+	</div>
+
+	<!-- jQuery JS -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Main JS -->
+	<script src="assets/js/script.js"></script>
+
+
+	<script data-main="js/asignatura_profile.js" type="text/javascript" src="lib/requirejs/require.js"></script>
+</body>
+
+</html>
