@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+	<title>Login</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Font-Awesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/css/all.css">
+	<link rel="stylesheet" href="assets/plugins/css/fontawesome.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/propios.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+		<div class="page no-navbar no-toolbar no-swipeback login-page login d-flex align-items-center vh100">
+			<div class="page-content w-100">
+				<div class="account-page">
+					<div class="account-inner">
+						<div class="account-center">
+							<div class="account-content">
+								<div class="account-logo">
+									<img alt="" src="assets/img/logo2.png">
+								</div>
+								<div class="account-title">
+									<h3>Login</h3>
+								</div>
+								<div class="account-form">
+
+									<div id="txtErrorLogin" class="alert alert-danger d-flex align-items-center"
+										role="alert">
+										<i class="fas fa-lg fa-times"></i>
+										<div id="respuestaLogin">
+
+										</div>
+									</div>
+
+									<div class="input-list">
+										<input type="text" id="email" placeholder="Email">
+									</div>
+									<div class="input-list">
+										<input id="password" type="password" placeholder="Contraseña">
+									</div>
+									<div class="input-list">
+										<a href="forgot-password.html">¿Olvidaste la contraseña?</a>
+									</div>
+									<div class="input-list">
+										<button id="btnLogin"
+											class="button button-big account-btn btn w-100">Login</button>
+									</div>
+
+									<p class="text-center m-b-0">¿Aun no te has registrado? <a
+											href="register.html">Register</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Main Wrapper /-->
+
+	<!-- jQuery JS -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Main JS -->
+	<script src="assets/js/script.js"></script>
+
+	<script data-main="js/login.js" type="text/javascript" src="lib/requirejs/require.js"></script>
+
+
+</body>
+
+</html>
