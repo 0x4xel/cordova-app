@@ -41,7 +41,7 @@
 					</div>
 					<div class="sliding custom-title">Asignatura</div>
 					<div class="right me-2">
-						<a href="#" class="link icon-only" data-bs-toggle="modal"
+						<a href="#" class="link icon-only crearExamen" data-bs-toggle="modal"
 							data-bs-target="#modalEditarEvaluacion">
 							<i class="far fa-edit"></i>
 						</a>
@@ -137,7 +137,7 @@
 							aria-labelledby="heading-B">
 							<div class="card-box">
 								<div class="experience-box">
-									<ul class="experience-list" id = "divAlumnos">
+									<ul class="experience-list" id="divAlumnos">
 										<!-- Por JS -->
 									</ul>
 								</div>
@@ -150,7 +150,7 @@
 							aria-labelledby="heading-C">
 							<div class="card-box">
 								<div class="experience-box">
-									<ul class="experience-list" id = "divEvaluaciones">
+									<ul class="experience-list" id="divEvaluaciones">
 										<!--  Por JS -->
 									</ul>
 								</div>
@@ -166,220 +166,51 @@
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h6 class="modal-title" id="exampleModalLabel">Edit Profile</h6>
+								<h6 class="modal-title" id="txtNombreModalExamen"></h6>
 								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<div class="modal-body">
 								<div class="list no-hairlines custom-form mt-0">
-									<h6>Basic Informations</h6>
-									<ul>
+									<ul class="sinbordes">
 										<li class="item-content item-input mt-3">
 											<div class="item-inner">
-												<div class="item-title item-label">First Name</div>
+												<div class="item-title item-label">Tipo de evaluación</div>
 												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Last Name</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Birth Date</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Gender</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<h6>Contact Informations</h6>
-									<ul>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Address</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">State</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Country</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Pincode</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Phone Number</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Address</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<h6>Education Informations</h6>
-									<ul>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Institution</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Subject</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Starting Date</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Complete Date</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Degree</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Grade</div>
-												<div class="item-input-wrap">
-													<input type="text">
+													<select id="comboEvaluaciones">
+													</select>
 													<span class="input-clear-button"></span>
 												</div>
 											</div>
 										</li>
 
-										<li class="item-content item-input">
+
+
+										<li class="item-content item-input mt-3">
 											<div class="item-inner">
-												<div class="item-input-wrap m-t-10">
-													<div class="add-more">
-														<a class="add-more-btn" href="#"><i class="fa fa-plus"></i> Add
-															More Institute</a>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<h6>Experience Informations</h6>
-									<ul>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Company Name</div>
+												<div class="item-title item-label">Descripción</div>
 												<div class="item-input-wrap">
-													<input type="text">
+													<input type="text" id="txtDescripcionExamen">
 													<span class="input-clear-button"></span>
 												</div>
 											</div>
 										</li>
 										<li class="item-content item-input">
 											<div class="item-inner">
-												<div class="item-title item-label">Location</div>
+												<div class="item-title item-label">Fecha de examen</div>
 												<div class="item-input-wrap">
-													<input type="text">
+													<input type="datetime-local" id="txtfechaExamen">
 													<span class="input-clear-button"></span>
 												</div>
 											</div>
 										</li>
 										<li class="item-content item-input">
 											<div class="item-inner">
-												<div class="item-title item-label">Job Position</div>
+												<div class="item-title item-label">Porcentaje</div>
 												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Period From</div>
-												<div class="item-input-wrap">
-													<input type="text">
-													<span class="input-clear-button"></span>
-												</div>
-											</div>
-										</li>
-										<li class="item-content item-input">
-											<div class="item-inner">
-												<div class="item-title item-label">Period To</div>
-												<div class="item-input-wrap">
-													<input type="text">
+													<input type="number" required id="txtPorcentajeExamen" min="0"
+														max="100">
 													<span class="input-clear-button"></span>
 												</div>
 											</div>
@@ -387,9 +218,13 @@
 										<li class="item-content item-input">
 											<div class="item-inner">
 												<div class="item-input-wrap m-t-10">
-													<div class="add-more">
-														<a class="add-more-btn" href="#"><i class="fa fa-plus"></i> Add
-															More Experience</a>
+													<div class="row">
+														<div class="col-12">
+															<a id="borrarExamen"
+																class="tab-link button button-big button-purple w-100 btn"
+																href="" data-bs-dismiss="modal"
+																aria-label="Close">Borrar</a>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -399,17 +234,20 @@
 												<div class="item-input-wrap m-t-10">
 													<div class="row">
 														<div class="col-12">
-															<a class="tab-link button button-big button-purple w-100 btn"
+															<a id="guardarExamen"
+																class="tab-link button button-big button-purple w-100 btn"
 																href="" data-bs-dismiss="modal"
-																aria-label="Close">Send</a>
+																aria-label="Close">Guardar</a>
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
+
+
+
 									</ul>
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -424,31 +262,32 @@
 
 	<div style="display:none">
 
-		<li id = "plantillaAlumno" class = "eventoAlumno">
+		<li id="plantillaAlumno" class="eventoAlumno">
 			<div class="experience-user">
 				<div class="before-circle"></div>
 			</div>
 			<div class="experience-content">
 				<div class="timeline-content">
-					<span class="name tieneEvento" id = "nombreAlumno"></span>
+					<span class="name tieneEvento" id="nombreAlumno"></span>
 				</div>
 			</div>
 		</li>
 
 
-		<li id = "plantillaEvaluacion" data-bs-toggle="modal"
-		data-bs-target="#modalEditarEvaluacion" class = "eventoEvaluacion">
-			<div class="experience-user">
-				<div class="before-circle"></div>
+		<li id="plantillaEvaluacion" data-bs-toggle="modal" data-bs-target="#modalEditarEvaluacion"
+		class="eventoEvaluacion">
+		<div class="experience-user">
+			<div class="before-circle"></div>
+		</div>
+		<div class="experience-content">
+			<div class="timeline-content">
+				<span class="name tieneEvento" id="txtnombreExamen"></span>
+				<div id="txtTipoEvaluacion"></div>
+				<span class="time" id="txtFechaExamen"></span>
 			</div>
-			<div class="experience-content">
-				<div class="timeline-content">
-					<span class="name tieneEvento" id = "txtnombreExamen"></span>
-					<div id = "txtTipoEvaluacion"></div>
-					<span class="time" id = "txtFechaExamen"></span>
-				</div>
-			</div>
-		</li>
+		</div>
+	</li> 
+	
 
 	</div>
 
