@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+	<title>Alumnos</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+
+	<!-- Font-Awesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/css/all.css">
+	<link rel="stylesheet" href="assets/plugins/css/fontawesome.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/propios.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+		<div class="clients">
+
+			<!-- Header -->
+			<div class="navbar two-action no-hairline">
+				<div class="navbar-inner d-flex align-items-center justify-content-between">
+					<div class="left me-0">
+						<a href="index.html" class="back link d-flex align-items-center">
+							<i class="fa fa-angle-left"></i>
+							<span>Back</span>
+						</a>
+					</div>
+					<div class="sliding custom-title">Alumnos</div>
+
+				</div>
+			</div>
+			<!-- /Header -->
+
+			<div class="page-content">
+				<div class="container">
+					<div id="divTarjetas" class="row">
+					<!-- Insercion por JS -->
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Plantillas /-->
+
+	<div style="display:none">
+		<div id = "plantillaTarjeta" class="col-6 pe-2">
+			<div class="widget seleccionarAlumno">
+				<div class="profile-img">
+					<a class="avatar" href="#" id ="txtPrimeraLetraNombreAlumno"></a>
+				</div>
+			
+				<h4 class="user-name text-ellipsis"><a id="txtNombreAlumno" href="#"></a></h4>
+				<div class="client-name" d="txtApellidoAlumno"></div>
+				<div class="user-role"></div>
+			</div>					
+		</div>
+	</div>
+
+
+
+	<!-- jQuery JS -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Main JS -->
+	<script src="assets/js/script.js"></script>
+	<script data-main="js/alumnos.js" type="text/javascript" src="lib/requirejs/require.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+<script type="text/javascript">
+	$(function () { includeHTML(); });
+</script>
