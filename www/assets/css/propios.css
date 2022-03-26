@@ -20,3 +20,26 @@ i.fas {
 	text-decoration: underline;
     font-weight: 900;
 }
+
+.custom-form ul.sinbordes {
+    border-top: 0px;
+}
+.nav-tabs .nav-link {
+    padding: 15px 7px 15px 7px;
+}
+
+.gradiente {
+    background: radial-gradient(green, blue);
+    color: #fff;
+    padding: 15px;
+    position: relative;
+}
+
+.notaGrande {
+    font-size: 30px;
+    padding: 0.35em 0.65em;
+}
+
+.padding-centro {
+    padding: 0rem 1rem 0rem 1rem;
+}

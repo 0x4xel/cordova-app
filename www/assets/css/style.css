@@ -785,12 +785,8 @@ body.overlay-body:before {
 	font-size: 12px;
 }
 .leave-list .badge {
-	border-radius: 4px;
-	font-size: 11px;
-	height: 18px;
-	line-height: 18px;
-	min-width: 76px;
-	padding: 0 10px;
+	font-size: 30px;
+    padding: 0.35em 0.65em;
 }
 .leave-list.list .item-after {
 	font-size: 12px;
@@ -1948,6 +1944,25 @@ body.overlay-body:before {
 	width: 100px;
 }
 .profile-header .pro-user-det {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.gradiente .pro-img-box {
+	background: transparent;
+	height: 100px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100px;
+	position:relative;
+}
+.gradiente .pro-img-box > img {
+	background: #fff;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+.gradiente .pro-user-det {
 	margin-top: 15px;
 	text-align: center;
 }
