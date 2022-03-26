@@ -1,0 +1,69 @@
+{
+	"project_info": {
+	  "project_number": "756800985270",
+	  "firebase_url": "https://testes-wunder.firebaseio.com",
+	  "project_id": "testes-wunder",
+	  "storage_bucket": "testes-wunder.appspot.com"
+	},
+	"client": [
+	  {
+		"client_info": {
+		  "mobilesdk_app_id": "1:756800985270:android:c5fa2e1dd49aa181382e17",
+		  "android_client_info": {
+			"package_name": "es.wunderapp.ejemploonesignal"
+		  }
+		},
+		"oauth_client": [
+		  {
+			"client_id": "756800985270-qfua3vmf25b7bek45a67t0rginb8q878.apps.googleusercontent.com",
+			"client_type": 3
+		  }
+		],
+		"api_key": [
+		  {
+			"current_key": "AIzaSyDKknGlpMKK3O5p-9iKU-dsEenrWFmWCWY"
+		  }
+		],
+		"services": {
+		  "appinvite_service": {
+			"other_platform_oauth_client": [
+			  {
+				"client_id": "756800985270-qfua3vmf25b7bek45a67t0rginb8q878.apps.googleusercontent.com",
+				"client_type": 3
+			  }
+			]
+		  }
+		}
+	  },
+	  {
+		"client_info": {
+		  "mobilesdk_app_id": "1:756800985270:android:2f83809e1883bcbd382e17",
+		  "android_client_info": {
+			"package_name": "es.wunderapp.test"
+		  }
+		},
+		"oauth_client": [
+		  {
+			"client_id": "756800985270-qfua3vmf25b7bek45a67t0rginb8q878.apps.googleusercontent.com",
+			"client_type": 3
+		  }
+		],
+		"api_key": [
+		  {
+			"current_key": "AIzaSyDKknGlpMKK3O5p-9iKU-dsEenrWFmWCWY"
+		  }
+		],
+		"services": {
+		  "appinvite_service": {
+			"other_platform_oauth_client": [
+			  {
+				"client_id": "756800985270-qfua3vmf25b7bek45a67t0rginb8q878.apps.googleusercontent.com",
+				"client_type": 3
+			  }
+			]
+		  }
+		}
+	  }
+	],
+	"configuration_version": "1"
+  }
