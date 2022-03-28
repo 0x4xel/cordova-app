@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+	<title>Examenes</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Font-Awesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/css/all.css">
+	<link rel="stylesheet" href="assets/plugins/css/fontawesome.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+		<div class="users">
+
+			<!-- Header -->
+			<div class="navbar two-action no-hairline">
+				<div class="navbar-inner d-flex align-items-center justify-content-between">
+					<div class="left me-0">
+						<a href="index.html" class="back link d-flex align-items-center">
+							<i class="fa fa-angle-left"></i>
+							<span>Back</span>
+						</a>
+					</div>
+					<div class="sliding custom-title">Examenes</div>
+					<div class="right">
+						<a href="#" class="link icon-only" data-bs-toggle="modal"
+						data-bs-target="#modalConfirmarNotas" >
+							<i class="material-icons">save</i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- /Header -->
+
+			<div class="page-content">
+				<div class="list no-hairlines media-list user-list">
+					<div class="container">
+						<div class="list padding-centro no-hairlines custom-form mt-0">
+							<ul class= "sinbordes"> 
+
+								<li class="item-content item-input mt-3">
+									<div class="item-inner">
+										
+										<div class="item-input-wrap">
+											<select id="comboAsignaturas">
+												<option value = "" selected>Selecciona una asignatura</option>
+											</select>
+											<span class="input-clear-button"></span>
+										</div>
+									</div>
+								</li>
+								<li class="item-content item-input mt-3">
+									<div class="item-inner">
+										
+										<div class="item-input-wrap">
+											<select id="comboExamenesAsignatura">
+												<option value = "" selected>Selecciona un examen</option>
+											</select>
+											<span class="input-clear-button"></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+								
+						</div>
+						<ul class="row" id = "divTarjetas">
+							<!-- Por JS -->
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Main Wrapper /-->
+
+	<!-- Modal confimarcion de guardar centrado en la pantalla -->
+	<div class="modal fade" id="modalConfirmarNotas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Confirmar</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>¿Estas seguro de guardar los cambios?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnGuardarNotas">Guardar</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+
+
+
+	<div style="display: none;">
+
+		<li id = "plantillaExamenAlumno" class="col-12">
+			<a href="#" class="item-link item-content d-flex ps-0 pe-0">
+				<div class="item-media me-2"><img src="assets/img/user.jpg" width="36" class="rounded-circle" alt="">
+				</div>
+				<div class="item-inner appraisal-col"
+					style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: space-between;">
+					<div class="item-title-row d-flex align-items-center justify-content-between">
+						<div class="item-title" id="txtNombreAlumno"></div>
+
+					</div>
+					<div class="item-input-wrap item-after user-cate text-info"
+						style="width: 51%;/* height: 15%; */float: right;line-height: 30px;">
+						<input type="text"  style="text-align: center;
+							border-radius: 25px;
+							border: none;
+							color: #666666;
+							line-height: 40px;
+							font-size: 20px;
+							width: 100%;
+							background: #e6e6e6;">
+						<span class="input-clear-button"></span>
+					</div>
+				</div>
+			</a>
+
+		</li>
+	</div>
+	<!-- jQuery JS -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Main JS -->
+	<script src="assets/js/script.js"></script>
+    <script data-main="js/examenes.js" type="text/javascript" src="lib/requirejs/require.js"></script>
+
+</body>
+
+</html>

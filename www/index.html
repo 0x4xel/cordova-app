@@ -36,7 +36,7 @@
 
                     <li>
                         <a class="panel-close" href="asignaturas.html">
-                           Mis asignaturas
+                            Mis asignaturas
                         </a>
                     </li>
 
@@ -48,25 +48,25 @@
 
 
                     <li>
-                        <a class="panel-close" href="index.html">
+                        <a class="panel-close" href="examenes.html">
                             Mis Examenes
                         </a>
                     </li>
-                   
+
 
                     <li>
                         <a class="panel-close" href="calendario.html">
                             Mi Calendario
                         </a>
                     </li>
-                   
-                   
+
+
                     <li>
                         <a class="panel-close" href="login.html">
                             Cerrar sesión
                         </a>
                     </li>
-                   
+
 
                     <li class="submenu">
                         <a href="#"><span>Pages</span> <span class="menu-arrow"></span></a>
@@ -92,23 +92,29 @@
                     <div class="left">
                         <a href="#" class="link icon-only"><i class="material-icons">menu</i></a>
                     </div>
-                    <div class="sliding"><img src="assets/img/logo.png" alt="" class=""></div>
-                    <div class="right d-flex">
-                        <a href="notifications.html" class="link icon-only"><i
-                                class="material-icons">notifications</i></a>
-                        <a href="#" data-bs-toggle="dropdown" aria-expanded="true" class="link dropdown-link"><i
-                                class="material-icons">more_vert</i></a>
-                        <div class="dropdown-menu dropdown-menu-right header_drop_icon">
-                            <a href="profile.html" class="dropdown-item">My Profile</a>
-                            <a href="settings.html" class="dropdown-item">Settings</a>
-                            <a href="index.html" class="dropdown-item">Log Out</a>
-                        </div>
-                    </div>
+                   
+                    
                 </div>
             </div>
             <!-- /Header -->
 
             <!-- Page Content -->
+
+            <div class="main-wrapper" >
+                <div style="position:relative">
+
+                <div class="calendar-page">
+                    <div class="page-content">
+                        <div id="calendar" class="block block-strong no-padding no-margin no-hairline-top"></div>
+                        <div class="list no-margin no-hairlines no-ios-left-edge">
+                            <input type="text" class="form-control inline-datetimepicker" placeholder="Select Date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
             <!-- /Page Content -->
 
         </div>
@@ -121,14 +127,21 @@
     <!-- <script src="assets/js/jquery-3.6.0.min.js"></script> -->
     <!-- Bootstrap Core JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Chart JS -->
-    <script src="assets/js/Chart.bundle.js"></script>
+
 
     <script type="text/javascript" src="scripts/jquery.js"></script>
+
+
+    <!-- Bootstrap Datepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+
+
     <!-- Main JS -->
     <script src="assets/js/script.js"></script>
 
- 
+
 
     <script type="text/javascript" src="cordova.js"></script>
     <script data-main="js/index.js" type="text/javascript" src="lib/requirejs/require.js"></script>

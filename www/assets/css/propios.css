@@ -43,3 +43,17 @@ i.fas {
 .padding-centro {
     padding: 0rem 1rem 0rem 1rem;
 }
+
+
+/* 
+.div-input-centrado {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.input-ancho {
+    float: right;
+    line-height: 30px;
+} */
