@@ -11,6 +11,10 @@ declare global {
 		plugins: Plugins;
 		FCM: any;
 		cordova: Cordova;
+		FullCalendar:any;
+		FullCalendarInteraction:any;
+		FullCalendarDayGrid:any;
+		FullCalendarTimeGrid:any;
 	}
 	interface Plugins {
 		toast: {

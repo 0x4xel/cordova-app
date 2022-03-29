@@ -371,6 +371,19 @@ body.overlay-body:before {
 	width: 100%;
 	text-align: center;
 }
+
+.sliding.custom-title-propio {
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	width: 100%;
+	text-align: center;
+}
 .side-menu .menu-arrow:before {
 	content: "\f105";
 	-webkit-transition: -webkit-transform 0.15s;
@@ -470,10 +483,13 @@ body.overlay-body:before {
 .navbar:after {
 	opacity: 0;
 }
+
+
+
 .navbar-inner {
 	background: #3a57c4;
 	width: 100%;
-	padding: 0px 6px 0 14px;
+	padding: 0px 10px 0 14px;
 	height: 60px;
 }
 .navbar a {

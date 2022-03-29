@@ -45,6 +45,10 @@ i.fas {
 }
 
 
+.table td {
+    text-align: center;   
+ }
+ 
 /* 
 .div-input-centrado {
     display: flex;
