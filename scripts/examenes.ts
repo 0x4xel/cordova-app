@@ -44,7 +44,11 @@ function inicializarOnClicks() {
 		let valorGuardado = parseFloat(String($(this).attr("valorNota")));
 
 		if (nota < 0 || nota > 10) {
-			$(this).val(valorGuardado);
+			if (!(isNaN(valorGuardado))){ 
+				$(this).val(valorGuardado);
+			} else {
+				$(this).val("");
+			}
 			$(this).css("background", "#e6e6e6");
 			$(this).css("color", "#666666");
 			return;
@@ -150,17 +154,17 @@ function addLineaAlumno(linea: any, index: number) {	// todo cambiar
 	const tarjeta = $("#plantillaExamenAlumno").clone();
 
 	tarjeta.removeAttr("id");
-
+	
 	tarjeta.find("#txtNombreAlumno").text(`${linea.nombre} ${linea.primerApellido} ${linea.segundoApellido}`);
 	tarjeta.find("input").addClass("txtNotaAlumno");
 	if (linea.nota == null) linea.nota = "";
 	if (linea.id == null) linea.id = "";
 	tarjeta.find(".txtNotaAlumno").val(linea.nota);
 	tarjeta.find(".txtNotaAlumno").attr("valorNota", linea.nota);
+	tarjeta.find(".txtFotoAlumno").attr("src", linea.picture);
 	tarjeta.find(".txtNotaAlumno").attr("data-id", linea.id);
 	tarjeta.find(".txtNotaAlumno").attr("data-alumno-id", linea.alumno_id);
 	tarjeta.find(".txtNotaAlumno").attr("tabindex", index);
-
 
 	$("#divTarjetas").append(tarjeta);
 
@@ -194,7 +198,9 @@ async function guardarNotas(asignatura_id: string, examen_id: string, notas: Not
 	let data = { notas: notas };
 	let response = await ComunicacionAjax.sendAjaxRequest("PUT", Constantes.URL_API + url, data);
 	if (response.status == "success") {
-		getNotasAsignaturaExamen(asignatura_id, examen_id);
+		console.log("acabo");
+		await getNotasAsignaturaExamen(asignatura_id, examen_id);
+		console.log("acaboconsulta");
 	} else {
 		console.log("error al guardar notas");
 	}
