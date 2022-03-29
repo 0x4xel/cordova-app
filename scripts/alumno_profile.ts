@@ -86,7 +86,7 @@ async function getDatosAlumno(id: string): Promise<void> {
 
 	if (response.status != "success") return;
 	const alumno = response.data.alumno[0];
-	$("#txtPrimeraLetraNombreAlumno").text(alumno.nombre.charAt(0).toUpperCase());
+	$("#txtFotoAlumno").attr("src", alumno.picture);
 
 	$("#nombreAlumno").text(alumno.nombre);
 	$("#descripcionAlumno").text(alumno.primerApellido + " " + alumno.segundoApellido);

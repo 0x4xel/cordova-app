@@ -50,11 +50,10 @@ function addTarjetaAlumno(linea: any) {	// todo cambiar
 	const tarjeta = $("#plantillaTarjeta").clone();
 
 	tarjeta.removeAttr("id");
-	tarjeta.find("#txtPrimeraLetraNombreAlumno").text(linea.nombre.charAt(0).toUpperCase());
+	tarjeta.find("#txtFotoAlumno").attr("src",linea.picture);
 	tarjeta.find("#txtNombreAlumno").text(`${linea.nombre}`);
 	tarjeta.find("#txtApellidoAlumno").text(`${linea.primerApellido} ${linea.segundoApellido}`);
 	tarjeta.find(".seleccionarAlumno").attr("data-id", linea.id);
-
 
 	$("#divTarjetas").append(tarjeta);
 
