@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+    <title>Inicio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!-- Font-Awesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/css/all.css">
+    <link rel="stylesheet" href="assets/plugins/css/fontawesome.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/propios.css">
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- Side Bar -->
+        <div class="side-menu" id="sidebar-menu">
+            <div class="close-btn"><span class="material-icons">close</span></div>
+            <div class="side-menu" id="sidebar-menu">
+                <ul>
+
+                    <li>
+                        <a class="panel-close" href="asignaturas.html">
+                            Mis asignaturas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="panel-close" href="alumnos.html">
+                            Mis Alumnos
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="panel-close" href="examenes.html">
+                            Mis Examenes
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="panel-close" href="calendario.html">
+                            Mi Calendario
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="panel-close" href="medias.html">
+                            Mis medias
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="panel-close" href="login.html">
+                            Cerrar sesión
+                        </a>
+                    </li>
+
+
+                    <li class="submenu">
+                        <a href="#"><span>Pages</span> <span class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li><a class="panel-close" href="login.html"> Login </a></li>
+                            <li><a class="panel-close" href="register.html"> Register </a></li>
+                            <li><a class="panel-close" href="forgot-password.html"> Forgot Password </a></li>
+                            <li><a class="panel-close" href="profile.html"> Profile </a></li>
+                            <li><a class="panel-close" href="walkthrough.html"> Walkthrough </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /Side Bar -->
+
+        <!-- Home -->
+        <div class="home">
+
+            <!-- Header -->
+            <div class="navbar two-action no-hairline">
+                <div class="navbar-inner d-flex align-items-center justify-content-between">
+                    <div class="left">
+                        <a href="#" class="link icon-only"><i class="material-icons">menu</i></a>
+                    </div>
+                    <div class="sliding custom-title-propio ">
+                        <select class="form-select" data-style="btn-primary" id="comboAsignaturas">
+                            <option value="" selected>Selecciona una asignatura</option>
+                        </select>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- /Header -->
+
+            <!-- Page Content -->
+
+            <div class="main-wrapper">
+                <div id="divSelectorAsignatura">
+                    <ul class="sinbordes">
+
+                        <li class="item-content item-input mt-3">
+                            <div class="item-inner">
+
+                                <div class="item-input-wrap">
+
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "divExamenes" style="position:relative; display:none">
+                    <h4 id="txtNombreAsignatura" style="text-align: center;">Matemáticas I </h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <!-- Por JS -->
+                            <thead>
+                                <tr class="columnasExamenes">
+                                </tr>
+                            </thead>
+
+                            <tbody id="bodyAlumnos">
+                                <tr>
+                                    <td> Elisa Alises </td>
+                                    <td><span class="iconify" data-icon="fa:flag" data-inline="false"
+                                            style="color: #888888"></span>
+                                        4.3</td>
+                                   
+                                    <td> 9</td>
+                                    <td>7,56</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- /Page Content -->
+
+        </div>
+        <!-- /Home -->
+
+    </div>
+    <!-- Main Wrapper /-->
+
+    <!-- jQuery JS -->
+    <!-- <script src="assets/js/jquery-3.6.0.min.js"></script> -->
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+
+
+    <!-- Bootstrap Datepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+
+
+    <!-- Main JS -->
+    <script src="assets/js/script.js"></script>
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script data-main="js/medias.js" type="text/javascript" src="lib/requirejs/require.js"></script>
+
+
+
+
+
+</body>
+
+</html>
