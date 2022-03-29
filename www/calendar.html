@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+    <title>calendar</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Font-Awesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/css/all.css">
+    <link rel="stylesheet" href="assets/plugins/css/fontawesome.min.css">
+
+    <!-- Bootstrap Datepicker CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css"> -->
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fullcalendar.css">
+    <link rel="stylesheet" href="assets/css/propios.css">
+
+
+    <link href='https://unpkg.com/@fullcalendar/core@4.3.1/main.min.css' rel='stylesheet' />
+    <link href='https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.css' rel='stylesheet' />
+    <link href='https://unpkg.com/@fullcalendar/list@4.3.0/main.min.css' rel='stylesheet' />
+    <link href='https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min.css' rel='stylesheet' />
+
+
+</head>
+
+<body>
+
+    <!-- Main Wrapper /-->
+    <div id='calendar'></div>
+    <!-- jQuery JS -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Datepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/script.js"></script>
+
+    <script src="lib/requirejs/require.js">
+        var calendar, FullCalendar, FullCalendarInteraction, FullCalendarDayGrid, FullCalendarTimeGrid;
+        require.config({
+            paths: {
+                "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min",
+                "moment": "https://unpkg.com/@fullcalendar/moment@4.3.0/main.min",
+                "@fullcalendar/core": "https://unpkg.com/@fullcalendar/core@4.3.1/main.min",
+                "@fullcalendar/interaction": "https://unpkg.com/@fullcalendar/interaction@4.3.0/main.min",
+                "@fullcalendar/daygrid": "https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min",
+                "@fullcalendar/list": "https://unpkg.com/@fullcalendar/list@4.3.0/main.min",
+                "@fullcalendar/timegrid": "https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min",
+            }
+        });
+        require(['jquery', 'moment', '@fullcalendar/core', '@fullcalendar/interaction', '@fullcalendar/daygrid', '@fullcalendar/list', '@fullcalendar/timegrid', 'ComunicacionAjax'],
+            function (jQuery, moment, FullCalendar, FullCalendarInteraction, FullCalendarDayGrid, FullCalendarList, FullCalendarTimeGrid) {
+                window.FullCalendar = FullCalendar;
+                window.FullCalendarInteraction = FullCalendarInteraction;
+                window.FullCalendarDayGrid = FullCalendarDayGrid;
+                window.FullCalendarTimeGrid = FullCalendarTimeGrid;
+                // window.FullCalendarList = FullCalendarList;
+                var calendarEl = document.getElementById('calendar');
+                calendar = new FullCalendar.Calendar(calendarEl, {
+                    plugins: ['interaction', 'dayGrid', 'timeGrid'],
+                    defaultView: 'timeGridWeek',
+                    headerToolbar: false,
+                    weekends: false,
+                    locale: 'es',
+                    height: 450,
+                    allDaySlot: false,
+                    slotDuration: '01:00:00',
+                    minTime: '08:00:00',
+                    maxTime: '23:00:00',
+                    selectable: true,
+                    events: [
+                        {
+                            title: 'Meeting',
+                            start: '2022-03-29T14:30:00',
+                            extendedProps: {
+                                status: 'done'
+                            }
+                        },
+                        {
+                            title: 'Birthday Party',
+                            start: '2022-03-30T07:00:00',
+                            backgroundColor: 'green',
+                            borderColor: 'green'
+                        }
+                    ],
+                    eventRender: function (info) {
+                        if (info.event.extendedProps.status === 'done') {
+
+                            // Change background color of row
+                            info.el.style.backgroundColor = 'red';
+
+                            // Change color of dot marker
+                            var dotEl = info.el.getElementsByClassName('fc-event-dot')[0];
+                            if (dotEl) {
+                                dotEl.style.backgroundColor = 'white';
+                            }
+                        }
+                    },
+                    eventClick: function (event, jsEvent, view) {
+                        // $('#modalTitle').html(event.title);
+                        // $('#modalBody').html(event.description);
+                        console.log(event);
+                        // $('#eventUrl').attr('href',event.url);
+                        //  $('#calendarModal').modal("show");
+                    },
+                });
+                calendar.render();
+                calendar.updateSize();
+            });
+
+    </script>
+    <script src="js/calendar.js" type="text/javascript"></script>
+
+
+
+</body>
+
+</html>
