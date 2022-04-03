@@ -8,10 +8,13 @@ export class ComunicacionAjax {
 	 */
 	static async sendAjaxRequest(type: string, url: string, data: any) {
 
+		let token = localStorage.getItem("token");
+		console.log(token);
 		const opciones = {
 			url: url,
 			type: type,
 			dataType: "json",
+			headers: { 'X-Auth-Token': token },
 			data: JSON.stringify(data),
 			contentType: 'application/json',
 		};
