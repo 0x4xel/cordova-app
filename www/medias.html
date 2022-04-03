@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#6F3E9F">
     <title>Inicio</title>
 
     <!-- Favicon -->
@@ -30,63 +30,63 @@
 
         <!-- Side Bar -->
         <div class="side-menu" id="sidebar-menu">
-            <div class="close-btn"><span class="material-icons">close</span></div>
-            <div class="side-menu" id="sidebar-menu">
-                <ul>
+			<div class="close-btn"><span class="material-icons">close</span></div>
+			<div class="side-menu" id="sidebar-menu">
+				<ul>
+					<li class="limagen">
+					<div class="sidebar-image">
+						<div class="sidebar-overlay"></div>
+						<img src="./assets/img/iconomenu.png" alt="img" class="responsive-image">
+					</div>
+				</li>
+					<li>
+						<a class="panel-close link icon-only " href="index.html">
+							<span class="iconify iconomenu" data-icon="mdi:calendar-account" data-inline="false"></span>
+							Mi Calendario
+						</a>
+					</li>
 
-                    <li>
-                        <a class="panel-close" href="asignaturas.html">
-                            Mis asignaturas
-                        </a>
-                    </li>
+					<li>
+						<a class="panel-close" href="asignaturas.html">
+							<span class="iconify iconomenu" data-icon="mdi:notebook" data-inline="false"></span>
+							Mis asignaturas
+						</a>
+					</li>
+					
+					<li>
+						<a class="panel-close" href="alumnos.html">
+							<span class="iconify iconomenu" data-icon="ph:student" data-inline="false"></span>
+							Mis Alumnos
+						</a>
+					</li>
+					
 
-                    <li>
-                        <a class="panel-close" href="alumnos.html">
-                            Mis Alumnos
-                        </a>
-                    </li>
+					<li>
+						<a class="panel-close" href="examenes.html">
+							<span class="iconify iconomenu" data-icon="ic:baseline-rate-review" data-inline="false"></span>
+							Mis Examenes
+						</a>
+					</li>
+					
 
+					<li>
+						<a class="panel-close" href="medias.html">
+							<span class="iconify iconomenu" data-icon="carbon:chart-average" data-inline="false"></span>
+							Mis evaluaciones
+						</a>
+					</li>
 
-                    <li>
-                        <a class="panel-close" href="examenes.html">
-                            Mis Examenes
-                        </a>
-                    </li>
+				
+					<li>
+						<a class="panel-close" href="login.html">
+							<span class="iconify iconomenu" data-icon="ion:close-circled" data-inline="false"></span>
+							Cerrar sesión
+						</a>
+					</li>
 
-
-                    <li>
-                        <a class="panel-close" href="calendario.html">
-                            Mi Calendario
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="panel-close" href="medias.html">
-                            Mis medias
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a class="panel-close" href="login.html">
-                            Cerrar sesión
-                        </a>
-                    </li>
-
-
-                    <li class="submenu">
-                        <a href="#"><span>Pages</span> <span class="menu-arrow"></span></a>
-                        <ul style="display: none;">
-                            <li><a class="panel-close" href="login.html"> Login </a></li>
-                            <li><a class="panel-close" href="register.html"> Register </a></li>
-                            <li><a class="panel-close" href="forgot-password.html"> Forgot Password </a></li>
-                            <li><a class="panel-close" href="profile.html"> Profile </a></li>
-                            <li><a class="panel-close" href="walkthrough.html"> Walkthrough </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+				</ul>
+			</div>
+		</div>
         <!-- /Side Bar -->
 
         <!-- Home -->
@@ -129,7 +129,7 @@
                 <div id = "divExamenes" style="position:relative; display:none">
                     <h4 id="txtNombreAsignatura" style="text-align: center;">Matemáticas I </h4>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-bordered">
                             <!-- Por JS -->
                             <thead>
                                 <tr class="columnasExamenes">
@@ -137,15 +137,7 @@
                             </thead>
 
                             <tbody id="bodyAlumnos">
-                                <tr>
-                                    <td> Elisa Alises </td>
-                                    <td><span class="iconify" data-icon="fa:flag" data-inline="false"
-                                            style="color: #888888"></span>
-                                        4.3</td>
-                                   
-                                    <td> 9</td>
-                                    <td>7,56</td>
-                                </tr>
+                                 <!-- Por JS -->
                             </tbody>
                         </table>
                     </div>
@@ -173,7 +165,7 @@
     <!-- Bootstrap Datepicker JS -->
     <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
+    <script src="assets/plugins/js/iconify.min.js"></script>
 
 
     <!-- Main JS -->

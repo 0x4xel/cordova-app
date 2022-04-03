@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#6F3E9F">
     <title>Inicio</title>
 
     <!-- Favicon -->
@@ -22,71 +22,72 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/propios.css">
+    <link rel="stylesheet" href="assets/css/style_calendar.css">
 
 </head>
 
-<body>
+<body >
     <div class="main-wrapper">
 
         <!-- Side Bar -->
         <div class="side-menu" id="sidebar-menu">
-            <div class="close-btn"><span class="material-icons">close</span></div>
-            <div class="side-menu" id="sidebar-menu">
-                <ul>
+			<div class="close-btn"><span class="material-icons">close</span></div>
+			<div class="side-menu" id="sidebar-menu">
+				<ul>
+					<li class="limagen">
+					<div class="sidebar-image">
+						<div class="sidebar-overlay"></div>
+						<img src="./assets/img/iconomenu.png" alt="img" class="responsive-image">
+					</div>
+				</li>
+					<li>
+						<a class="panel-close link icon-only " href="index.html">
+							<span class="iconify iconomenu" data-icon="mdi:calendar-account" data-inline="false"></span>
+							Mi Calendario
+						</a>
+					</li>
 
-                    <li>
-                        <a class="panel-close" href="asignaturas.html">
-                            Mis asignaturas
-                        </a>
-                    </li>
+					<li>
+						<a class="panel-close" href="asignaturas.html">
+							<span class="iconify iconomenu" data-icon="mdi:notebook" data-inline="false"></span>
+							Mis asignaturas
+						</a>
+					</li>
+					
+					<li>
+						<a class="panel-close" href="alumnos.html">
+							<span class="iconify iconomenu" data-icon="ph:student" data-inline="false"></span>
+							Mis Alumnos
+						</a>
+					</li>
+					
 
-                    <li>
-                        <a class="panel-close" href="alumnos.html">
-                            Mis Alumnos
-                        </a>
-                    </li>
+					<li>
+						<a class="panel-close" href="examenes.html">
+							<span class="iconify iconomenu" data-icon="ic:baseline-rate-review" data-inline="false"></span>
+							Mis Examenes
+						</a>
+					</li>
+					
 
+					<li>
+						<a class="panel-close" href="medias.html">
+							<span class="iconify iconomenu" data-icon="carbon:chart-average" data-inline="false"></span>
+							Mis evaluaciones
+						</a>
+					</li>
 
-                    <li>
-                        <a class="panel-close" href="examenes.html">
-                            Mis Examenes
-                        </a>
-                    </li>
+				
+					<li>
+						<a class="panel-close" href="login.html">
+							<span class="iconify iconomenu" data-icon="ion:close-circled" data-inline="false"></span>
+							Cerrar sesión
+						</a>
+					</li>
 
-
-                    <li>
-                        <a class="panel-close" href="calendario.html">
-                            Mi Calendario
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="panel-close" href="medias.html">
-                            Mis medias
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a class="panel-close" href="login.html">
-                            Cerrar sesión
-                        </a>
-                    </li>
-
-
-                    <li class="submenu">
-                        <a href="#"><span>Pages</span> <span class="menu-arrow"></span></a>
-                        <ul style="display: none;">
-                            <li><a class="panel-close" href="login.html"> Login </a></li>
-                            <li><a class="panel-close" href="register.html"> Register </a></li>
-                            <li><a class="panel-close" href="forgot-password.html"> Forgot Password </a></li>
-                            <li><a class="panel-close" href="profile.html"> Profile </a></li>
-                            <li><a class="panel-close" href="walkthrough.html"> Walkthrough </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+				</ul>
+			</div>
+		</div>
         <!-- /Side Bar -->
 
         <!-- Home -->
@@ -98,31 +99,108 @@
                     <div class="left">
                         <a href="#" class="link icon-only"><i class="material-icons">menu</i></a>
                     </div>
-                   
-                    
+                    <div class="sliding custom-title">Mi calendario</div>
+
                 </div>
             </div>
             <!-- /Header -->
 
             <!-- Page Content -->
 
-            <div class="main-wrapper" >
+            <div class="main-wrapper">
                 <div style="position:relative">
 
-                <div class="calendar-page">
-                    <div class="page-content">
-                        <div id="calendar" class="block block-strong no-padding no-margin no-hairline-top"></div>
-                        <div class="list no-margin no-hairlines no-ios-left-edge">
-                            <input type="text" class="form-control inline-datetimepicker" placeholder="Select Date">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content w-100">
+                                    <div class="calendar-container">
+                                        <div class="calendar">
+                                            <div class="year-header">
+                                                <div class="year-header"> 
+                                                    <span class="left-button fa fa-chevron-left" id="prev"> </span> 
+                                                    <span class="year" id="label"></span> 
+                                                    <span class="right-button fa fa-chevron-right" id="next"> </span>
+                                                  </div> 
+                                            </div>
+                                            <table class="days-table w-100">
+                                                <td class="day">DOM</td>
+                                                <td class="day">LUN</td>
+                                                <td class="day">MAR</td>
+                                                <td class="day">MIER</td>
+                                                <td class="day">JUE</td>
+                                                <td class="day">VIE</td>
+                                                <td class="day">SAB</td>
+                                            </table>
+                                            <div class="frame">
+                                                <table class="dates-table w-100">
+                                                    <tbody class="tbody">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="events-container">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
             </div>
 
             <!-- /Page Content -->
 
+
+            <div class="modal fade custom-modal-popup" id="modalEditarCalendario" tabindex="-1" role="dialog"
+					aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title" >Editar anotación</h6>
+								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="list no-hairlines custom-form mt-0">
+									<ul class="sinbordes">
+										
+										<li class="item-content item-input">
+											<div class="item-inner">
+											
+												<div class="item-input-wrap">
+                                                    <textarea id = "txtNota" rows = "5" cols = "60" name = "txtNota">
+                                                    </textarea>
+													<span class="input-clear-button"></span>
+												</div>
+											</div>
+										</li>
+									
+									
+										<li class="item-content item-input">
+											<div class="item-inner">
+												<div class="item-input-wrap m-t-10">
+													<div class="row">
+														<div class="col-12">
+															<a id="guardarNota"
+																class="tab-link button button-big button-purple w-100 btn"
+																href="" data-bs-dismiss="modal"
+																aria-label="Close">Guardar</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
         </div>
         <!-- /Home -->
 
@@ -132,27 +210,20 @@
     <!-- jQuery JS -->
     <!-- <script src="assets/js/jquery-3.6.0.min.js"></script> -->
     <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="assets/js/popper.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 
-    <script type="text/javascript" src="scripts/jquery.js"></script>
-
-
-    <!-- Bootstrap Datepicker JS -->
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
+    <script src="assets/plugins/js/iconify.min.js"></script>
 
 
     <!-- Main JS -->
     <script src="assets/js/script.js"></script>
 
-
-
     <script type="text/javascript" src="cordova.js"></script>
-    <script data-main="js/index.js" type="text/javascript" src="lib/requirejs/require.js"></script>
 
-
+	<script src="assets/js/calendarv8.js"></script>
 
 
 

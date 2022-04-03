@@ -6,7 +6,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#6F3E9F">
 	<title>Alumnos</title>
 
 	<!-- Favicon -->
@@ -28,16 +28,75 @@
 <body>
 	<div class="main-wrapper">
 
+		<!-- Side Bar -->
+		<div class="side-menu" id="sidebar-menu">
+			<div class="close-btn"><span class="material-icons">close</span></div>
+			<div class="side-menu" id="sidebar-menu">
+				<ul>
+					<li class="limagen">
+					<div class="sidebar-image">
+						<div class="sidebar-overlay"></div>
+						<img src="./assets/img/iconomenu.png" alt="img" class="responsive-image">
+					</div>
+				</li>
+					<li>
+						<a class="panel-close link icon-only " href="index.html">
+							<span class="iconify iconomenu" data-icon="mdi:calendar-account" data-inline="false"></span>
+							Mi Calendario
+						</a>
+					</li>
+
+					<li>
+						<a class="panel-close" href="asignaturas.html">
+							<span class="iconify iconomenu" data-icon="mdi:notebook" data-inline="false"></span>
+							Mis asignaturas
+						</a>
+					</li>
+					
+					<li>
+						<a class="panel-close" href="alumnos.html">
+							<span class="iconify iconomenu" data-icon="ph:student" data-inline="false"></span>
+							Mis Alumnos
+						</a>
+					</li>
+					
+
+					<li>
+						<a class="panel-close" href="examenes.html">
+							<span class="iconify iconomenu" data-icon="ic:baseline-rate-review" data-inline="false"></span>
+							Mis Examenes
+						</a>
+					</li>
+					
+
+					<li>
+						<a class="panel-close" href="medias.html">
+							<span class="iconify iconomenu" data-icon="carbon:chart-average" data-inline="false"></span>
+							Mis evaluaciones
+						</a>
+					</li>
+
+				
+					<li>
+						<a class="panel-close" href="login.html">
+							<span class="iconify iconomenu" data-icon="ion:close-circled" data-inline="false"></span>
+							Cerrar sesión
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- /Side Bar -->
+
 		<div class="clients">
+
 
 			<!-- Header -->
 			<div class="navbar two-action no-hairline">
 				<div class="navbar-inner d-flex align-items-center justify-content-between">
-					<div class="left me-0">
-						<a href="index.html" class="back link d-flex align-items-center">
-							<i class="fa fa-angle-left"></i>
-							<span>Atras</span>
-						</a>
+					<div class="left">
+						<a href="#" class="link icon-only"><i class="material-icons">menu</i></a>
 					</div>
 					<div class="sliding custom-title">Alumnos</div>
 
@@ -48,7 +107,7 @@
 			<div class="page-content">
 				<div class="container">
 					<div id="divTarjetas" class="row">
-					<!-- Insercion por JS -->
+						<!-- Insercion por JS -->
 					</div>
 
 				</div>
@@ -60,16 +119,16 @@
 	<!-- Plantillas /-->
 
 	<div style="display:none">
-		<div id = "plantillaTarjeta" class="col-6 pe-2">
+		<div id="plantillaTarjeta" class="col-6 pe-2">
 			<div class="widget seleccionarAlumno">
 				<div class="profile-img">
-					<img class="avatar" href="#" id ="txtFotoAlumno"></img>
+					<img class="avatar" href="#" id="txtFotoAlumno"></img>
 				</div>
-			
+
 				<h4 class="user-name text-ellipsis"><a id="txtNombreAlumno" href="#"></a></h4>
 				<div class="client-name" id="txtApellidoAlumno"></div>
 				<div class="user-role"></div>
-			</div>					
+			</div>
 		</div>
 	</div>
 
@@ -80,6 +139,8 @@
 
 	<!-- Bootstrap Core JS -->
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	
+	<script src="assets/plugins/js/iconify.min.js"></script>
 
 	<!-- Main JS -->
 	<script src="assets/js/script.js"></script>
