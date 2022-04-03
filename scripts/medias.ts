@@ -64,7 +64,6 @@ async function getAsignaturasDocente(): Promise<void> {
 	let data = {};
 
 	let response = await ComunicacionAjax.sendAjaxRequest("GET", Constantes.URL_API + url, data);
-	console.log(response);
 
 
 	if (response.status == "success") {
@@ -96,7 +95,10 @@ async function getExamenesAsignatura(asignatura_id: string) {
 		const asignatura = response.data.asignatura[0];
 		if (asignatura.Examens.length <= 0) {
 			$("#divExamenes").hide();
-			console.log("no hay examenes");
+			$("#bodyAlumnos").html("");
+			$("#bodyAlumnos").html("");
+			$("#txtNombreAsignatura").text("");
+
 			return;
 		}
 		$("#txtNombreAsignatura").text(asignatura.nombre);
@@ -114,9 +116,6 @@ async function getExamenesAsignatura(asignatura_id: string) {
 		});
 
 		hashAlumnos.forEach(getNotasAsignaturaAlumno);
-
-
-
 	}
 }
 
@@ -146,8 +145,30 @@ async function getNotasAsignaturaAlumno(alumno_id: string) {
 		$("tr#" + alumno_id).append(`</td>`);
 		hashExamenes.forEach(examen_id => addNotaExamen(examen_id, notas));
 
+		// realizar las medias de las notas. Detectar si hay notas nulas.
+		var pares = notas.map(function (x: any) {
+			return x.nota * x.Examen.porcentaje / 100
+		});
+
+		let suma = pares.reduce((valorAnterior: number, valorActual: number) => valorActual += valorAnterior);
+		var porcentajes = notas.map(function (x: any) {
+			return x.Examen.porcentaje
+		});
+		let sumaPorcentajes = porcentajes.reduce((valorAnterior: number, valorActual: number) => valorActual += valorAnterior);
+
+		if (sumaPorcentajes < 100) {
+			$("tr#" + alumno_id).append(`<td>${suma}*</td>`);
+			return
+		}
+
+		let clase = "";
+		if (suma < 5) {
+			clase = "tdrojo";
+		}else {
+			clase = "tdverde";
+		}
+		$("tr#" + alumno_id).append(`<td class = "${clase}">${suma}</td>`);
 		//  linea.examenes.forEach(addNotaExamen);
-		$("tr#" + alumno_id).append(`<td>TODO</td>`);
 	} else {
 		console.log("error");
 	}
@@ -156,13 +177,16 @@ async function getNotasAsignaturaAlumno(alumno_id: string) {
 
 
 function addNotaExamen(examen_id: any, examenesAlumno: any) {
-	console.log(examenesAlumno);
-	console.log(examen_id);
 	//busca la nota que coincide con examenesAlumno
 	const nota: any = examenesAlumno.find(function (nota: any) {
 		return nota.examen_id == examen_id;
 	});
 	let alumno_id = examenesAlumno[0].Alumno.id;
+
+	if (nota == undefined) {
+		$("tr#" + alumno_id).append(`<td></td>`);
+		return;
+	}
 	//pinto la nota en bodyalumnos
 	$("tr#" + alumno_id).append(`<td>${nota.nota}</td>`);
 }
