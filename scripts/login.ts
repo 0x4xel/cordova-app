@@ -33,21 +33,18 @@ async function login(): Promise<void> {
 
 	};
 
-
 	let response = await ComunicacionAjax.sendAjaxRequest("POST", Constantes.URL_API + url, data);
 	console.log(response);
 
 	if (response.status == "success") {
 		localStorage.setItem("user_id", response.data.user.id);
-		localStorage.setItem("token", response.data.user.token);
+		localStorage.setItem("token", response.data.token);
 		window.location.href = "index.html";
 	} else {
 		$("#txtErrorLogin").show();
 		$("#txtErrorLogin").addClass("d-flex");
-		$("#respuestaLogin").text(response.message);
+		$("#respuestaLogin").text("Email y/o contraseña incorrecto");
 	}
-	
-
 }
 
 
