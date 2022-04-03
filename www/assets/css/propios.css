@@ -29,7 +29,7 @@ i.fas {
 }
 
 .gradiente {
-    background: radial-gradient(green, blue);
+    background: linear-gradient(50deg, #6F3E9F, transparent);
     color: #fff;
     padding: 15px;
     position: relative;
@@ -46,9 +46,37 @@ i.fas {
 
 
 .table td {
-    text-align: center;   
+    text-align: center;  
+    vertical-align: middle; 
  }
+
+ .table td.tdrojo {
+    background-color: firebrick;
+    filter: opacity(0.8);
+    color: white;
+}
+.table td.tdverde {
+    background-color: green;
+    filter: opacity(0.5);
+    color: white;
+}
  
+.iconomenu {
+    width: 27px;
+    height: 37px;
+    margin-right: 1em;
+    color: #fafafa
+}
+
+.responsive-image {
+    text-align: center;
+}
+
+.limagen{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+
+}
 /* 
 .div-input-centrado {
     display: flex;
